@@ -4,16 +4,10 @@ import { FaSearch, FaTimes, FaAngleDown } from "react-icons/fa";
 import Button from "@mui/material/Button";
 
 const CountryDropdown = () => {
-  // State to control modal visibility
   const [isOpenModel, setIsOpenModel] = useState(false);
-
-  // State for selected country
-  const [selectedCountry, setSelectedCountry] = useState("India");
-
-  // State for search term
+  const [selectedCountry, setSelectedCountry] = useState("Select Location");
   const [searchTerm, setSearchTerm] = useState("");
 
-  // List of countries
   const countries = [
     "India", "Sri Lanka", "United States", "Canada", "Australia",
     "United Kingdom", "China", "Japan", "Germany", "France",
@@ -22,16 +16,14 @@ const CountryDropdown = () => {
     "Turkey", "New Zealand", "Saudi Arabia", "Nigeria", "Argentina"
   ];
 
-  // Filter countries based on search term
   const filteredCountries = countries.filter(country =>
     country.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Handle country selection
   const handleCountrySelect = (country) => {
     setSelectedCountry(country);
     setIsOpenModel(false);
-    setSearchTerm(""); // reset search after selection
+    setSearchTerm("");
   };
 
   return (
@@ -39,27 +31,24 @@ const CountryDropdown = () => {
       {/* Location button */}
       <div className="location-dropdown">
         <button className="location-btn" onClick={() => setIsOpenModel(true)}>
-          Your Location{" "}
-          <span className="Location-Dropdown-angle">
-            <FaAngleDown />
-          </span>
-          <div>
+          <div className="location-text">
+            <span className="location-title">Your Location</span>
             <span className="location-label">{selectedCountry}</span>
           </div>
+          <span className="location-icon">
+            <FaAngleDown />
+          </span>
         </button>
       </div>
 
       {/* Country selection dialog */}
       <Dialog open={isOpenModel} onClose={() => setIsOpenModel(false)} className="locationModel">
-        {/* Close button */}
         <button onClick={() => setIsOpenModel(false)} className="close-btn" aria-label="Close dialog">
           <FaTimes />
         </button>
-
         <h2>Choose Your Delivery Location</h2>
         <p>Enter your address and we will specify the offer for your area.</p>
 
-        {/* Search input */}
         <div className="Search-UI">
           <input
             type="text"
@@ -72,7 +61,6 @@ const CountryDropdown = () => {
           </button>
         </div>
 
-        {/* Country list */}
         <ul className="CountryList">
           {filteredCountries.length > 0 ? (
             filteredCountries.map((country, index) => (
