@@ -4,7 +4,7 @@ import { IoAdd } from "react-icons/io5";
 import Button from "@mui/material/Button";
 
 
-export const QuantityBox = () => {
+ const QuantityBox = () => {
 
     const [inputVal, setInputVal]= useState(1)
 
@@ -32,3 +32,4 @@ if(inputVal!==1 && inputVal>0){
         </>
     )
 }
+export default QuantityBox;

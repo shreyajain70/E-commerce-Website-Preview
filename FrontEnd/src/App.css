@@ -1479,3 +1479,1199 @@ nav {
 }
 
 
+
+
+
+
+/* Product Details CSS */
+
+
+
+/* ProductDetails.css */
+
+.prod-page-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  background: #fff;
+  position: relative;
+}
+
+.prod-discount-badge {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  background: #ff4d4d;
+  color: white;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.prod-flex-wrap {
+  display: flex;
+  gap: 40px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.prod-img-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prod-main-img {
+  width: 100%;
+  max-width: 500px;
+}
+
+.prod-thumbnail-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.prod-thumbnail-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.prod-thumbnail-img:hover {
+  border-color: #007bff;
+}
+
+.prod-thumbnail-img.active {
+  border-color: #007bff;
+}
+
+.prod-details-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.prod-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.prod-brand-rating {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.prod-divider {
+  margin: 15px 0;
+}
+
+.prod-price-row {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.prod-old-price {
+  font-size: 18px;
+  color: gray;
+  text-decoration: line-through;
+}
+
+.prod-new-price {
+  font-size: 22px;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.prod-stock-label {
+  color: green;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+.prod-desc {
+  margin: 15px 0;
+  line-height: 1.5;
+}
+
+.prod-weight-size {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+/* Weight/Size buttons styling */
+.weight-size-btn {
+  padding: 6px 18px;
+  border: 2px solid #e0e0e0;
+  background: #fff;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border 0.2s, background 0.2s, color 0.2s;
+  outline: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.weight-size-btn.active,
+.weight-size-btn:hover {
+  border: 2px solid #007bff;
+  background: #f0f8ff;
+  color: #007bff;
+}
+
+.prod-add-cart-btn {
+  background: #007bff !important;
+  color: white !important;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.prod-wishlist-compare-row {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.custom-tooltip {
+  background-color: black !important;
+  color: white !important;
+  font-size: 13px !important;
+}
+
+
+/* ProductTabs CSS */
+
+/* Main Container */
+.tabs-container {
+  width: 100%;
+  padding: 40px 5%;
+  background: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Tab Buttons */
+.tab-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  gap: 12px;
+}
+
+.tab-btn {
+  background: #f4f4f4;
+  color: #444;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #ddd;
+}
+
+.tab-btn:hover {
+  background: #e9ecef;
+  transform: translateY(-2px);
+}
+
+.tab-btn.active {
+  background: #2563eb; /* Blue active */
+  color: #fff;
+  font-weight: 600;
+  border-color: #2563eb;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* Tab Content */
+.tab-content {
+  display: none;
+  background: #fafafa;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  animation: fadeIn 0.4s ease;
+}
+
+.tab-content.show {
+  display: block;
+}
+
+.tab-content p {
+  color: #444;
+  line-height: 1.6;
+}
+
+.tab-content ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.tab-content ul li {
+  margin-bottom: 6px;
+  color: #555;
+  list-style: disc;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .tab-btn {
+    flex: 1 1 45%;
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab-btn {
+    flex: 1 1 100%;
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+}
+
+
+/* Related Products CSS */
+/* ====== Review Section Styles ====== */
+.tab-content {
+  background-color: #ffffff; /* Main white background */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+.tab-content.show {
+  display: block;
+}
+
+.tab-content.hide {
+  display: none;
+}
+
+/* ====== Reviews List ====== */
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.review-item {
+  background: #f9fafc;
+  border-left: 5px solid #007bff; /* Accent blue stripe */
+  border-radius: 8px;
+  padding: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.review-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.15);
+}
+
+.review-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.review-name {
+  color: #222;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.review-date {
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.review-rating {
+  margin-left: auto;
+}
+
+.review-body p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ====== Review Form ====== */
+.review-form {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.review-form label {
+  font-weight: 500;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.review-input,
+.review-name-input,
+.review-image-input {
+  width: 100%;
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  background: #fafafa;
+  transition: border-color 0.2s ease;
+}
+
+.review-input:focus,
+.review-name-input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.submit-review-btn {
+  background: #007bff;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.submit-review-btn:hover {
+  background: #0056b3;
+}
+
+/* ====== Responsive Styles ====== */
+@media (max-width: 768px) {
+  .review-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .review-rating {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .tab-content {
+    padding: 15px;
+  }
+  .review-item {
+    padding: 12px;
+  }
+  .review-form {
+    padding: 15px;
+  }
+}
+
+
+
+/* Contact Us CSS */
+
+
+.contact-page {
+  background: #ffffff;
+  color: #333;
+  padding: 50px 10%;
+  font-family: 'Poppins', sans-serif;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-header h1 {
+  font-size: 2.5rem;
+  color: #1e90ff;
+}
+
+.contact-header p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Contact Info Cards */
+.contact-info {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-card {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  background: #f0f8ff;
+}
+
+.info-icon {
+  font-size: 2rem;
+  color: #1e90ff;
+  margin-bottom: 10px;
+}
+
+/* Contact Form */
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+  background: #f9f9f9;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.contact-form h2 {
+  margin-bottom: 20px;
+  color: #1e90ff;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  color: #333;
+  outline: none;
+  transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 1px solid #1e90ff;
+  box-shadow: 0 0 5px rgba(30, 144, 255, 0.3);
+}
+
+.contact-form button {
+  background: #1e90ff;
+  color: white;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background: #0077cc;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+}
+
+
+
+/* About Us CSS */
+
+.aboutus-page {
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+  color: #222;
+}
+
+/* Hero Section */
+.aboutus-hero {
+  background: url("https://images.unsplash.com/photo-1542834369-f10ebf06d3cb?auto=format&fit=crop&w=1500&q=80")
+    center/cover no-repeat;
+  height: 60vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  background: rgba(255, 255, 255, 0.75);
+  padding: 2rem;
+  text-align: center;
+  animation: fadeIn 1.2s ease-in-out;
+  border-radius: 10px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #0077cc;
+}
+
+.hero-subtitle {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #444;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Mission, Vision, Values Section */
+.mvv-section {
+  display: flex;
+  gap: 2rem;
+  padding: 4rem 10%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.mvv-card {
+  background: #f8f8f8;
+  border-radius: 15px;
+  padding: 2rem;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid #e5e5e5;
+}
+
+.mvv-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 119, 204, 0.2);
+}
+
+.mvv-icon {
+  font-size: 2.5rem;
+  color: #0077cc;
+  margin-bottom: 1rem;
+}
+
+.mvv-card h3 {
+  color: #111;
+}
+
+.mvv-card p {
+  color: #555;
+}
+
+/* Team Section */
+.team-section {
+  padding: 4rem 10%;
+  text-align: center;
+}
+
+.team-section h2 {
+  font-size: 2.2rem;
+  color: #0077cc;
+  margin-bottom: 2rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.team-card {
+  background: #f8f8f8;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid #e5e5e5;
+}
+
+.team-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 119, 204, 0.2);
+}
+
+.team-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.team-info {
+  padding: 1rem;
+}
+
+.team-info h4 {
+  margin: 0;
+  color: #111;
+}
+
+.team-info p {
+  margin: 0.3rem 0 0;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .mvv-section {
+    padding: 2rem 5%;
+  }
+}
+
+
+/* Add To Cart CSS */
+
+
+/* Fill screen */
+.cart-section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fafafa;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+/* Outer card */
+.cart-main-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 28px 0 rgba(60,70,130,0.07);
+  width: 1200px;
+  max-width: 95vw;
+}
+
+/* Flex layout for content */
+.cart-content {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+}
+
+/* Left area */
+.cart-left {
+  flex: 2;
+}
+
+.cart-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 5px;
+}
+
+.cart-subtitle {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+/* Table styles */
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart-table thead tr th {
+  text-align: left;
+  padding: 14px 16px;
+  font-weight: 700;
+  background: #f3f4f6;
+  font-size: 1rem;
+}
+
+.cart-table tbody td {
+  padding: 18px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 1rem;
+}
+
+/* Product styling */
+.cart-product {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cart-product-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.cart-product-name {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Rating styles */
+.MuiRating-root {
+  font-size: 1.4rem !important;
+}
+.MuiRating-iconFilled {
+  color: #fbbf24 !important;
+}
+.MuiRating-iconEmpty {
+  color: #d1d5db !important;
+}
+
+/* Remove button */
+.remove-btn {
+  font-size: 1.6rem;
+  color: #ef4444;
+  cursor: pointer;
+}
+.remove-btn:hover {
+  color: #dc2626;
+}
+
+/* Cart totals card */
+.cart-totals-card {
+  flex: 1;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 3px 20px rgba(60,70,130,0.07);
+  padding: 24px;
+  min-width: 280px;
+  height: fit-content;
+
+}
+
+.cart-totals-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.cart-totals-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.cart-totals-total {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 12px;
+  font-weight: 700;
+}
+
+/* Add to cart button */
+.add-to-cart-btn {
+  margin-top: 20px !important;
+  background: #ef4444 !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  text-transform: none !important;
+  padding: 12px 0 !important;
+  border-radius: 8px !important;
+  width: 100% !important;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .cart-content {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .cart-table thead {
+    display: none;
+  }
+  .cart-table tbody tr {
+    display: block;
+    margin-bottom: 16px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  }
+  .cart-table tbody td {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: none;
+    padding: 8px 0;
+  }
+}
+
+
+/* Sign In Page CSS */
+
+
+/* Base background gradient */
+.signin-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #7f5af0 60%, #f8f8f8 90%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Centered form container */
+.signin-container {
+  background: #fff;
+  border-radius: 18px;
+  padding: 40px 28px;
+  box-shadow: 0px 8px 24px rgba(97, 97, 120, 0.12);
+  width: 100%;
+  max-width: 370px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Logo styling */
+.logo-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.logo {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+}
+
+/* Title */
+.signin-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #22223B;
+}
+
+/* Form styling */
+.signin-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Input field */
+.input {
+  margin-bottom: 8px !important;
+}
+
+/* Forgot password link */
+.forgot-password {
+  color: #14AEED;
+  text-align: left;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+
+/* Sign in button */
+.signin-btn {
+  background-color: #845EEE !important;
+  color: #fff !important;
+  border-radius: 7px !important;
+  margin-bottom: 10px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  height: 44px;
+}
+
+/* Signup option */
+.signup-option {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 0.98rem;
+  margin-bottom: 8px;
+}
+
+.signup-link {
+  color: #14AEED !important;
+  margin-left: 4px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Divider text */
+.social-divider {
+  text-align: center;
+  color: #454670;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  margin-top: 7px;
+}
+
+/* Google button */
+.google-signin-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #D4D4D8;
+  background: #fff;
+  border-radius: 7px;
+  padding: 7px 12px;
+  font-weight: 600;
+  color: #454670;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 6px;
+  font-size: 1rem;
+  transition: box-shadow 0.15s;
+  box-shadow: 0px 1px 5px rgba(97,97,120,0.06);
+}
+
+.google-signin-btn:hover {
+  box-shadow: 0px 4px 12px rgba(97,97,120,0.13);
+}
+
+.google-icon {
+  width: 26px;
+  height: 26px;
+  margin-right: 12px;
+  object-fit: contain;
+}
+
+/* Responsive for mobile */
+@media (max-width: 525px) {
+  .signin-container {
+    max-width: 97vw;
+    padding: 22px 8px;
+    border-radius: 8px;
+  }
+  .logo {
+    width: 38px;
+    height: 38px;
+  }
+  .signin-title {
+    font-size: 1.28rem;
+  }
+  .google-signin-btn {
+    font-size: 0.95rem;
+    padding: 6px 7px;
+  }
+}
+
+/* Log In Page */
+
+/* Overall background styling */
+.login-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6c47a3 50%, #fff 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card container styling */
+.login-card {
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(36, 22, 71, 0.12);
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Logo section with increased size */
+.login-logo img {
+  width: 150px; /* Increased from 58px */
+  margin-bottom: 0.8rem;
+}
+
+/* Title styling */
+.login-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #23175b;
+  margin-bottom: 1.25rem;
+}
+
+/* Form layout */
+.login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Inputs styling */
+.login-input input {
+  font-size: 1rem;
+  padding-bottom: 0.7rem;
+}
+
+/* Forgot password */
+.login-forgot {
+  font-size: 0.95rem;
+  color: #6c47a3;
+  margin: 8px 0 12px;
+  text-align: right;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.login-forgot:hover {
+  text-decoration: underline;
+}
+
+/* Sign in button */
+.login-btn {
+  background: #6c47a3 !important;
+  color: #fff !important;
+  border-radius: 6px !important;
+  margin-bottom: 1.1rem !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+}
+
+/* Signup option */
+.login-signup {
+  font-size: 0.95rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.login-signup-link {
+  color: #6c47a3;
+  font-weight: 500;
+  margin-left: 4px;
+  text-decoration: none;
+}
+
+.login-signup-link:hover {
+  text-decoration: underline;
+}
+
+/* Divider between form and social login */
+.login-divider {
+  width: 100%;
+  text-align: center;
+  margin: 1rem 0 0.7rem 0;
+  font-size: 0.97rem;
+  color: #666;
+}
+
+/* Google sign-in button */
+.login-google-btn {
+  border: 1px solid #ebe6f8;
+  background: #fff;
+  color: #23175b;
+  border-radius: 7px;
+  width: 100%;
+  padding: 0.7rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.login-google-btn:hover {
+  background: #f2edfb;
+}
+
+/* Google icon styling */
+.login-google-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+  .login-card {
+    padding: 1.4rem 0.7rem;
+    max-width: 95vw;
+  }
+  .login-title {
+    font-size: 1.15rem;
+  }
+  .login-logo img {
+    width: 65px;
+    margin-bottom: 0.4rem;
+  }
+}
+
+/* Optional input focus */
+.login-input input:focus {
+  border-bottom: 2px solid #6c47a3 !important;
+}
