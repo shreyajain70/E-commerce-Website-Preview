@@ -4,11 +4,12 @@ import { FaCartArrowDown } from "react-icons/fa";
 import CountryDropdown from "./CountryDropdown";
 import { SearchBar } from "./SearchBar";
 import { NavCategoryFile } from "./NavCategoryFile";
+import { Link } from "react-router-dom";
 
-export const Header = () => {
-    return (
+export const Header = ()=>{
+    return(
         <>
-            <div className="Header-container">
+          <div className="Header-container">
                 <div className="logo-div">
                     <img
                         className="logo"
@@ -24,23 +25,20 @@ export const Header = () => {
 
                 <div className="User-Cart-Wrapper">
                     <div className="Login-UI">
-                        <button>
+                        <Link to={"/SignUpPage"}><button>
                             <FaUser />
-                        </button>
+                        </button></Link>
                     </div>
                     <div className="Cart-UI">
-                        <button>
+                      <Link to={"/AddToCart"}> <button>
                             <FaCartArrowDown />
-                        </button>
+                        </button></Link> 
                         <span className="cart-count">1</span>
                     </div>
                 </div>
             </div>
 
             <NavCategoryFile></NavCategoryFile>
-
-
         </>
-    );
-};
-
+    )
+}

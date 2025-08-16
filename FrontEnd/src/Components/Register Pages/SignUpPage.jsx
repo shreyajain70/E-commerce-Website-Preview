@@ -1,15 +1,16 @@
 import React from "react";
-import TextField from '@mui/material/TextField';
+import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import Link from "@mui/material/Link";
+import { Link, useNavigate } from "react-router-dom";
 
+const SignUpPage = () => {
+    const navigate = useNavigate();
 
- const SignUpPage = () => {
     return (
-        <>
-            <div>
+        <div className="signin-bg">
+            <div className="signin-container">
 
-
+                {/* Logo */}
                 <div className="logo-div">
                     <img
                         className="logo"
@@ -17,33 +18,89 @@ import Link from "@mui/material/Link";
                         alt="logo"
                     />
                 </div>
-                <h2>SignUp Page</h2>
 
+                {/* Title */}
+                <h2 className="signin-title">Sign Up</h2>
 
-                <form>
-                    <div> <TextField id="standard-basic" label="Full Name" required type="text" variant="standard" /></div>
-                       <div> <TextField id="standard-basic" label="Phone Number" required type="number" variant="standard" /></div>
-                    <div> <TextField id="standard-basic" label="Email" required type="email" variant="standard" /></div>
-                    <div> <TextField id="standard-basic" label="password" required type="password" variant="standard" /></div>
+                {/* Form */}
+                <form className="signin-form">
+                    <TextField
+                        className="input"
+                        label="Full Name"
+                        required
+                        type="text"
+                        variant="standard"
+                        fullWidth
+                    />
+                    <TextField
+                        className="input"
+                        label="Phone Number"
+                        required
+                        type="number"
+                        variant="standard"
+                        fullWidth
+                    />
+                    <TextField
+                        className="input"
+                        label="Email"
+                        required
+                        type="email"
+                        variant="standard"
+                        fullWidth
+                    />
+                    <TextField
+                        className="input"
+                        label="Password"
+                        required
+                        type="password"
+                        variant="standard"
+                        fullWidth
+                    />
 
+                    {/* Forgot Password */}
+                    <a href="#" className="forgot-password">Forgot Password?</a>
 
-                    <a>Forget Password</a>
-                    <Button>SignIn</Button>
-                    <Button>Cancel</Button>
-                    <p>Already Registered <Link>Log In</Link></p>
-                    <h5>Or continue with social account</h5>
+                    {/* Buttons */}
+                    <Button type="submit" className="signin-btn" variant="contained" fullWidth>
+                        Sign Up
+                    </Button>
+                    <Button variant="outlined" fullWidth>
+                        Cancel
+                    </Button>
 
-                    <button><img src="https://images.icon-icons.com/2642/PNG/512/google_mail_gmail_logo_icon_159346.png"></img>Sign In with Google</button>
+                    {/* Already Registered */}
+                    <div className="signup-option">
+                        <span>Already Registered?</span>
+                        <Link to={"/LogInPage"} className="signup-link">Log In</Link>
+                    </div>
 
+                    {/* Divider */}
+                    <p className="social-divider">Or continue with social account</p>
+
+                    {/* Google Sign In */}
+                    <button type="button" className="google-signin-btn">
+                        <img
+                            className="google-icon"
+                            src="https://images.icon-icons.com/2642/PNG/512/google_mail_gmail_logo_icon_159346.png"
+                            alt="Google"
+                        />
+                        Sign In with Google
+                    </button>
                 </form>
 
+                {/* Go Back Button */}
+                <Button
+                    variant="text"
+                    fullWidth
+                    onClick={() => navigate(-1)}
+                    style={{ marginTop: "16px" }}
+                >
+                    Go Back
+                </Button>
 
             </div>
+        </div>
+    );
+};
 
-
-        </>
-
-
-    )
-}
-export default SignUpPage
+export default SignUpPage;

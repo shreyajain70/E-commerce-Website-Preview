@@ -1,9 +1,11 @@
 import React from "react";
 import TextField from '@mui/material/TextField';
 import Button from "@mui/material/Button";
-import Link from "@mui/material/Link";
+import { Link, useNavigate } from "react-router-dom";
 
 export const LoginInPage = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="login-bg">
       <div className="login-card">
@@ -37,21 +39,32 @@ export const LoginInPage = () => {
           </Button>
           <div className="login-signup">
             <span>Not Registered?</span>
-            <Link href="#" className="login-signup-link">Sign Up</Link>
+            <Link to={"/SignUpPage"} className="login-signup-link">Sign Up</Link>
           </div>
           <div className="login-divider">
             <span>Or continue with social account</span>
           </div>
           <button className="login-google-btn" type="button">
             <img
-              className="login-google-icon" 
+              className="login-google-icon"
               src="https://images.icon-icons.com/2642/PNG/512/google_mail_gmail_logo_icon_159346.png"
               alt="google icon"
             />
             Sign In With Google
           </button>
         </form>
+
+        {/* Go Back Button */}
+        <Button
+          variant="text"
+          fullWidth
+          onClick={() => navigate("/Home")}
+          style={{ marginTop: "16px" }}
+        >
+          Go Back
+        </Button>
+
       </div>
     </div>
-  )
-}
+  );
+};

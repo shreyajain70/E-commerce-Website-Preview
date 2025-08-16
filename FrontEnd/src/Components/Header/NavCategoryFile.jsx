@@ -10,6 +10,7 @@ import { FaBlog } from "react-icons/fa";
 import { FcBusinessContact } from "react-icons/fc";
 import { FcAbout } from "react-icons/fc";
 import { SideBar } from "./SideBar";
+import { Link } from "react-router-dom";
 
 
 export const NavCategoryFile = () => {
@@ -41,10 +42,10 @@ export const NavCategoryFile = () => {
 
       {/* Navigation Items */}
       <div className="nav-items-div">
-        <button className="nav-items">
+      <Link to={"/Home"}> <button className="nav-items">
           <span><FaHome /></span>
           Home
-        </button>
+        </button></Link> 
         <button className="nav-items">
           <span><GiDress /></span>
           Fashion
@@ -65,14 +66,17 @@ export const NavCategoryFile = () => {
           <span><FaBlog /></span>
           Blog
         </button>
-        <button className="nav-items">
+        <Link to={"/ContactUs"}><button className="nav-items">
           <span><FcBusinessContact /></span>
           Contact Us
-        </button>
-        <button className="nav-items">
-          <span><FcAbout /></span>
-          About Us
-        </button>
+        </button></Link>
+        <Link to="/AboutUs">
+          <button className="nav-items">
+            <span><FcAbout /></span>
+            About Us
+          </button>
+        </Link>
+
       </div>
     </nav>
   );

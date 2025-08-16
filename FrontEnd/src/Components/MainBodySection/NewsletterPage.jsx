@@ -2,7 +2,7 @@ import React from "react";
 import { MdOutlineMail } from "react-icons/md";
 
 
-const NewsletterPage = () => (
+export const NewsletterPage = () => (
   <div className="newsletter-container">
     <div className="newsletter-main">
       {/* Left Side */}
@@ -53,4 +53,4 @@ const NewsletterPage = () => (
   </div>
 );
 
-export default NewsletterPage;
+

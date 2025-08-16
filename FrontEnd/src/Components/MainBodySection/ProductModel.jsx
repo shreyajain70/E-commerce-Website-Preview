@@ -9,12 +9,14 @@ import Button from "@mui/material/Button";
 import { MdCompareArrows } from "react-icons/md";
 import QuantityBox from "./QuantityBox";
 
-export const ProductModel = (props) => {
-  const [activeIndex, setActiveIndex] = useState(0);
 
-  return (
-    <>
-      <Dialog
+
+
+  export const ProductModel = (props)=>{
+      const [activeIndex, setActiveIndex] = useState(0);
+    return(
+      <>
+         <Dialog
         open={props.open}   // ✅ changed from true to props.open
         className="ProductModel-div"
         onClose={props.closeProductModel}
@@ -137,6 +139,6 @@ export const ProductModel = (props) => {
           </div>
         </div>
       </Dialog>
-    </>
-  );
-};
+      </>
+    )
+  }

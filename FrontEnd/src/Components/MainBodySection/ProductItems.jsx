@@ -9,7 +9,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { ProductModel } from "./ProductModel";
 
-export const ProductItems = () => {
+ const ProductItems = () => {
   const [isOpenProductModel, setIsOpenProductModel] = useState(false);
 
   const ViewProductDetails = (id) => {
@@ -579,3 +579,4 @@ export const ProductItems = () => {
     </>
   );
 };
+export default ProductItems;
