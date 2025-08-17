@@ -12,8 +12,13 @@ App.use(cors());
 App.use(BodyParser.json());
 
 // Routess
-const CategoryRoute = require("./routes/CategoryRoute")
+const CategoryRoute = require("./routes/Category")
+const ProductRoute = require("./routes/Product")
+
+
 App.use(`/api/category`,CategoryRoute)
+App.use(`/api/products`, ProductRoute)
+
 
 // Database 
 mongoose.connect(process.env.CONNECTION_STRING, {

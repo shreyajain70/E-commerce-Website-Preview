@@ -1,4 +1,4 @@
-const { Category } = require("../models/CategorySchema")
+const {Category} = require("../models/CategorySchema")
 const express = require("express")
 const router = express.Router();
 
@@ -98,7 +98,7 @@ router.post("/create", async (req, res) => {
     res.send("Category Data Send Successfully")
 })
 
-// 
+// Update Data 
 router.put("/:id", async (req, res) => {
     const limit = pLimit(2);
 
